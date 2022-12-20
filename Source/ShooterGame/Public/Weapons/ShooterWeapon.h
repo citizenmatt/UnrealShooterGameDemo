@@ -12,7 +12,7 @@ class UAudioComponent;
 class UParticleSystemComponent;
 class UForceFeedbackEffect;
 class USoundCue;
-class UMatineeCameraShake;
+class ULegacyCameraShake;
 
 namespace EWeaponState
 {
@@ -103,7 +103,7 @@ class AShooterWeapon : public AActor
 
 	//////////////////////////////////////////////////////////////////////////
 	// Ammo
-	
+
 	enum class EAmmoType
 	{
 		EBullet,
@@ -323,7 +323,7 @@ protected:
 
 	/** camera shake on firing */
 	UPROPERTY(EditDefaultsOnly, Category=Effects)
-	TSubclassOf<UMatineeCameraShake> FireCameraShake;
+	TSubclassOf<ULegacyCameraShake> FireCameraShake;
 
 	/** force feedback effect to play when the weapon is fired */
 	UPROPERTY(EditDefaultsOnly, Category=Effects)
@@ -542,4 +542,3 @@ protected:
 	/** Returns Mesh3P subobject **/
 	FORCEINLINE USkeletalMeshComponent* GetMesh3P() const { return Mesh3P; }
 };
-
